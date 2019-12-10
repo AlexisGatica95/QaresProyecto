@@ -12,14 +12,5 @@ async function loginUser(username,password) {
     }
 }
 
-// async function loginAdminUser(username,password) {
-//     try{
-//         let query = "select id_cliente from ?? where usuario_cliente = ? and password_cliente = ? and estado_cliente = 1";
-//         const rows = await pool.query(query,[process.env.TABLA_CLIENTES,username,password]);
-//         return rows;
-//     } catch(error) {
-//         throw error;
-//     }
-// }
 
 module.exports = {loginUser}

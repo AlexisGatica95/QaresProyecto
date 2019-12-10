@@ -1,11 +1,12 @@
 const pool = require('../DB');
-const md5 = require('md5');
+//const md5 = require('md5');
 
 async function getUsuario(id) {
     try {
         console.log('entro al model');
         let query = "select nombre_usuario, apellido_usuario, telefono_usuario, mail_usuario from ?? where id_usuario = ?";
         const rows = await pool.query(query,["usuarios",id]);
+        console.log(id);
         return rows; 
     } catch (error) {
         console.log('salio por el model');
@@ -42,7 +43,6 @@ async function updatePass(id,obj) {
             
 }
         
-
     } catch(error) {
         throw error;
     }

@@ -21,6 +21,7 @@ async function registrar(obj){
     }
 }
 
+
 async function confirmarUser(codigo){
     try {
         let query = 'update ?? set cuenta_confirmada_usuario = 1 where codigo_mail_usuario = ?';
@@ -38,5 +39,7 @@ async function confirmarUser(codigo){
         
     }
 }
+
+
 
 module.exports = {registrar,confirmarUser}

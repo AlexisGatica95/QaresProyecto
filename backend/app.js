@@ -1,14 +1,21 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+const fs = require("fs");
+const jwt = require("jsonwebtoken");
+
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
 require('dotenv').config();
 
-
-const usuariosRouter = require('./controllers/usuarios');
 const autenticacionRouter  = require('./controllers/autenticacion');
 const registroRouter = require('./controllers/registro');
+const usuariosRouter = require('./controllers/usuarios');
+const publicacionRouter = require('./controllers/publicacion');
+const homeRouter = require('./controllers/home');
+
+
 
 var app = express();
 
@@ -39,9 +46,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/autenticacion',autenticacionRouter);
 app.use('/registro',registroRouter);
-app.use('/autenticacion',autenticacionRouter)
-app.use('/usuarios', usuariosRouter);
+app.use('/usuarios',secured, usuariosRouter);
+app.use('/publicacion',publicacionRouter);
+app.use('/home',homeRouter);
+
 
 
 // catch 404 and forward to error handler

@@ -8,7 +8,7 @@ const usuariosModel = require('../models/usuariosModel');
 router.get('/:id', async(req,res,next)=> {
     try {
         console.log('entro al controller');
-        let usr_data = await usuariosModel.getUsuario(req.id);
+        let usr_data = await usuariosModel.getUsuario(req.params.id);
         res.json({status : 'ok', data : usr_data});
     } catch (error) {
         console.log('salio por el controller');
@@ -16,8 +16,6 @@ router.get('/:id', async(req,res,next)=> {
         res.status(500).json({status : 'error'});
     }
 })
-
-// --------------------------------------------------------------
 
 
 router.put('/update/:id', async(req,res,next)=> {

@@ -4,6 +4,7 @@ const router = express.Router();
 const registroModel = require('../models/registroModel');
 
 //  Registro de usuario
+
 const uuid = require('uuid');
 const md5 = require('md5');
 
