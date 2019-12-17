@@ -1,13 +1,12 @@
 <div>
     <form enctype="multipart/form-data">
-    <textarea name="comentario" id="comentario"></textarea>
-    <select # cuenta name="ciudad" id="ciudad">
-        <option value="valor 1">Valor 1</option>
-        <option value="valor 2">Valor 2</option>
+    <textarea name="comentario" id="comentario" [(ngModel)]="comentario"></textarea>
+    <select #cuenta name="cuenta" (change)="select(cuenta.value)">
+      <option value="0" selected disabled>Elegir opcion</option>
+      <option value="uno">uno</option>
+      <option value="dos">dos</option>
     </select>
-
-    <input type="file" (change)='archivoSeleccionado($event)'>
-    <button type="button" (click)='subir()'>Enviar </button>
-    
-    </form>
+    <input type="file" (change)="archivoSeleccionado($event)">
+    <button type="button" (click)="subir()">Enviar</button>
+  </form>
 </div>

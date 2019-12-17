@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
+const cors = require('cors');
 
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -14,11 +15,13 @@ const registroRouter = require('./controllers/registro');
 const usuariosRouter = require('./controllers/usuarios');
 const publicacionRouter = require('./controllers/publicacion');
 const homeRouter = require('./controllers/home');
+const uploadRouter = require('./controllers/upload');
+
 
 
 
 var app = express();
-
+app.use(cors());
 secured = (req,res,next) => {
   try {
   
@@ -51,6 +54,7 @@ app.use('/registro',registroRouter);
 app.use('/usuarios',secured, usuariosRouter);
 app.use('/publicacion',publicacionRouter);
 app.use('/home',homeRouter);
+app.use('/upload',uploadRouter);
 
 
 

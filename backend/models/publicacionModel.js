@@ -49,6 +49,16 @@ async function check(id){
     }
 }
 
+async function prov(){
+    try {
+        let query ='select id_c, nombre from ?? where activa = 1';
+        const rows = await pool.query(query,['ciudades']);
+        return rows;
+
+    } catch (error) {
+        throw error;
+    }
+}
 
 async function updatePubli(obj,id){
     try {
@@ -87,4 +97,4 @@ async function deletePubli(id){
 
 
 
-module.exports = {publicacion,updatePubli,deletePubli,confirmarPubli,check}
+module.exports = {publicacion,updatePubli,deletePubli,confirmarPubli,check,prov}

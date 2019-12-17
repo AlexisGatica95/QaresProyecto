@@ -1,28 +1,66 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const upload  = multer({dest : './uploads/'});
+const fs = require('fs');
 
 const uuid = require('uuid');
 
 const publicacionModel = require('../models/publicacionModel');
 
 
-router.post('/:id', async(req,res,next)=> {
+router.post('/:id', upload.array('file',2), async(req,res,next)=> {
     try {
-        console.log('entro al controller'); 
-        let obj = {
-        titulo : req.body.titulo,
-        texto : req.body.texto,
-        edad : req.body.edad,
-        telefono : req.body.telefono,
-        mail : req.body.mail,
-        wsp : req.body.wsp,
-        id_mail_p: uuid(),
-        id_usr : req.params.id
-    }
-    let publican2 = await publicacionModel.publicacion(obj);
-    if (publican2){ 
-        res.json({status:'ok', message : 'se subio tu publicacion'});
-    }    
+        console.log(req.files);
+        console.log(req.body);
+        
+        let errores = 0;
+        let archivitos = [];
+        var i;
+        let nombre_imagen = "";
+        let ext = "";
+        let stringIMG = '';
+
+        for (i = 0; i < req.files.length; i++) {
+            nombre_imagen = uuid();
+            if(req.files[i].mimetype == 'image/jpeg' || req.files[i].mimetype == 'image/png') {
+                ext = req.files[i].mimetype.split('/'); // [image,jpeg]
+                ext = "."+ext[1];
+                fs.createReadStream('./uploads/'+req.files[i].filename).pipe(fs.createWriteStream('./uploads/'+nombre_imagen+ext))
+                fs.unlink('./uploads/'+req.files[i].filename,(err) => {
+                    if(err) {
+                        console.log(err);
+                    }
+                })
+                archivitos[i] = nombre_imagen+ext;
+                stringIMG = stringIMG+','+nombre_imagen+ext;
+            } else {
+                // 
+                errores = 1;
+            }
+    
+        }
+
+        if (errores ==0) {
+            console.log('entro al controller'); 
+            let obj = {
+                titulo_p : req.body.titulo,
+                texto_p : req.body.texto,
+                edad_p : req.body.edad,
+                telefono_p : req.body.telefono,
+                mail_p : req.body.mail,
+                wsp_p : req.body.wsp,
+                id_mail_p: uuid(),
+                id_usr : req.params.id,
+                img_p : stringIMG
+            }
+            let publican2 = await publicacionModel.publicacion(obj);
+            if (publican2){ 
+                res.json({status:'ok', message : 'se subio tu publicacion'});
+            }    
+        }
+
+        
     } catch (error) {
         console.log('salio por el controller');
         console.log(error);
@@ -33,12 +71,12 @@ router.post('/:id', async(req,res,next)=> {
 router.put('/updatePubli/:id', async (req,res,next)=> {
     try {
         let obj = {
-            titulo : req.body.titulo,
-            texto : req.body.texto,
-            edad : req.body.edad,
-            telefono : req.body.telefono,
-            mail : req.body.mail,
-            wsp : req.body.wsp
+            titulo_p : req.body.titulo,
+            texto_p : req.body.texto,
+            edad_p : req.body.edad,
+            telefono_p : req.body.telefono,
+            mail_p : req.body.mail,
+            wsp_p : req.body.wsp
         }
         const id = req.params.id;
 
@@ -91,10 +129,23 @@ router.get('/confirmar/:codigoPubli', async (req,res,next) => {
     }
 })
 
+router.get('/provincias', async (req,res,next)=> {
+    try {
+        let traerprov = await publicacionModel.prov();
+
+       res.json({status : 'ok', provincias : traerprov });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({status:'error'});
+        throw error;
+    }
+})
+
 router.get('/:id' , async (req,res,next)=> {
     try {
         
-        let chequeo = await publicacionModel.check(id);
+        let chequeo = await publicacionModel.check(req.params.id);
 
 
         if (chequeo==false){

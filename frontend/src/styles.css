@@ -1,1 +1,112 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial;
+    font-size: 24px;
+    display: flex;
+    background-image: url('images/background_Qares.jpg');
+    min-width: 100%;
+    /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+    background-attachment: fixed;
+   /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+   background-size: cover;
+
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    align-items: center;
+    width: 100%;
+}
+
+input, select, textarea {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 25px;
+    -webkit-box-shadow: inset  2px -2px 8px -4px rgba(163,161,163,1);
+    -moz-box-shadow: inset  2px -2px 8px -4px rgba(163,161,163,1);
+    box-shadow: inset  2px -2px 8px -4px rgba(163,161,163,1);
+    border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+    border: 0px solid #000000;
+
+
+
+}   
+
+input{
+    padding: 15px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0px;
+    padding: 0px;
+}
+
+button {
+    margin-top: 40px;
+    height: 30px;
+    border: none;
+    border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.cont-form {
+    background: rgba(255,175,75,1);
+background: -moz-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(67,58,140,0.48) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(67,58,140,0.48)));
+background: -webkit-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(67,58,140,0.48) 100%);
+background: -o-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(67,58,140,0.48) 100%);
+background: -ms-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(67,58,140,0.48) 100%);
+background: linear-gradient(to right, rgba(255,175,75,1) 0%, rgba(67,58,140,0.48) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#433a8c', GradientType=1 );
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+    -webkit-box-shadow: -17px 16px 21px -5px rgba(0,0,0,0.22);
+    -moz-box-shadow: -17px 16px 21px -5px rgba(0,0,0,0.22);
+    box-shadow: -17px 16px 21px -5px rgba(0,0,0,0.22);
+
+    border-radius: 12px 12px 12px 12px;
+    -moz-border-radius: 12px 12px 12px 12px;
+    -webkit-border-radius: 12px 12px 12px 12px;
+    
+
+}
+
+.formulario {
+    max-width: 500px;
+    width: 100%;
+} 
+
+.p-b{
+    padding-bottom: 20px;
+    color: floralwhite;
+}
+
+
+
+  
+
+
+

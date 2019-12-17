@@ -1,0 +1,29 @@
+<div>  <form enctype="multipart/form-data">
+        <input type="text" name="titulo" placeholder="titulo" [(ngModel)]="titulo"> <br>
+        <input type="text" name="texto" placeholder="introduce tu descripcion bb" [(ngModel)]="texto"> <br>
+        <input type="number" name="edad" placeholder="edad" [(ngModel)]="edad"> <br>
+        <input type="number" name="telefono" placeholder="telefono" [(ngModel)]="telefono"> <br>
+        <input type="mail" name="mail" placeholder="mail" [(ngModel)]="mail"> <br>
+        
+        <label><input #habi type="checkbox" [(ngModel)]="habilitar" name='habi' value="1">whatsapp habilitado </label><br>
+        
+        <select #provi name="provi" (change)="selectProvincia(provi.value)">
+          <option value="0" selected disabled>Elegir opcion</option>
+          <option *ngFor='let pr of provincias' value="{{pr.id_c}}">{{pr.nombre}}</option>
+        </select>
+      
+        <textarea name="comentario" id="comentario" [(ngModel)]="comentario"></textarea>
+        <select #cuenta name="cuenta" (change)="select(cuenta.value)">
+          <option value="0" selected disabled>Elegir opcion</option>
+          <option value="uno">uno</option>
+          <option value="dos">dos</option>
+        </select>
+
+        
+
+        <input type="file" (change)="archivoSeleccionado($event)" multiple>
+        
+        
+        <button type="button" (click)="subir()">Enviar</button>
+      </form>
+    </div>

@@ -1,0 +1,14 @@
+<div class="formulario">
+
+    <form [formGroup] = "form" (ngSubmit)="login()">
+    
+        <input type="text" class="form-control" name="mail" formControlName="mail" placeholder="mail">
+        <span class="text-danger" *ngIf="form.get('mail').status != 'VALID' && form.get('mail').touched;">Usuario invalido</span>
+
+        <input type="password" class="form-control" name="password" formControlName="password" placeholder="foo@example.com">
+        <span class="text-danger" *ngIf="form.get('password').status != 'VALID' && form.get('password').touched;">Password invalido</span>
+        
+        <button type="submit" [disabled]="form.invalid" class="btn btn-block">Ingresar</button>
+    
+    </form>
+</div>
