@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { UploadComponent } from './components/upload/upload.component';
+
 import { HttpClientModule,HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PublicarComponent } from './components/publicar/publicar.component';
@@ -15,7 +15,6 @@ import { RegistroComponent } from './components/registro/registro.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    UploadComponent,
     PublicarComponent,
     LoginComponent,
     RegistroComponent

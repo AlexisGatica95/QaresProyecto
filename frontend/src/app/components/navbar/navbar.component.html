@@ -1,1 +1,38 @@
-<p>navbar works!</p>
+<header>
+  <nav>
+      <div class="logo">
+          <img src="http://www.penumbria.mx/wp-content/uploads/2018/08/keythong-1.png"/>
+      </div>
+
+    
+ 
+      <div class="right">
+          <ul>
+              <li class="nav-item dropdown" *ngIf="login; else nologin ">
+            
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{nombre}}
+                  </a>
+          
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Perfil</a>
+                    <a class="dropdown-item" (click)="logout()">Salir</a>
+                  </div>
+                  
+                </li>
+          
+                <ng-template #nologin>
+                  <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/login']">Iniciar sesión</a>
+                  
+                
+                 
+                    <a class="nav-link" [routerLink]="['/registro']">Registrate</a>
+                  </li>
+                </ng-template>
+
+          </ul>
+      </div>
+  </nav>  
+
+</header>

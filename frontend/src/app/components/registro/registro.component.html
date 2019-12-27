@@ -39,6 +39,8 @@
                     <span class="text-danger" *ngIf="form.get('password').status != 'VALID' && form.get('password').touched;">No cumple los requisitos</span>
                 
                 </div>
+                
+                <div class="g-recaptcha" data-sitekey="6LeIfcgUAAAAAHd7_p5XlhXhl9ce-sS0eh_ZD4zT"></div>
 
                 <button type="submit" [disabled]="form.invalid" class="btn btn-success btn-block">Registrarse</button>
                             
