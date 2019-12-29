@@ -49,6 +49,14 @@ async function check(id){
     }
 }
 
+async function getallpublis(){
+    console.log('entro por el model');
+    let query='select titulo_p, texto_p, edad_p, telefono_p, img_p from ?? where activa=1';
+    const rows = await pool.query(query,['publicaciones']);
+    console.log(rows);
+    return rows;
+}
+
 async function prov(){
     try {
         let query ='select id_c, nombre from ?? where activa = 1';
@@ -97,4 +105,4 @@ async function deletePubli(id){
 
 
 
-module.exports = {publicacion,updatePubli,deletePubli,confirmarPubli,check,prov}
+module.exports = {publicacion,updatePubli,deletePubli,confirmarPubli,check,prov,getallpublis}

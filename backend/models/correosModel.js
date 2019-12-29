@@ -58,7 +58,7 @@ async function MailConfirmarPubli(obj) {
 
         let info = await transporter.sendMail({
             from: process.env.MAIL_USER,
-            to: obj.mail,
+            to: obj.mail_p,
             subject: 'Confirma tu anuncio: '+ obj.titulo , 
             html: 'Hola,por favor ingresa al siguiente link para confirmar tu publicacion: <a href="'+ linkconfirmacion +'">'+ linkconfirmacion +'</a>'
         });

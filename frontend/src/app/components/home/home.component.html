@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+
+<div class="contenedor" >
+  <div class='publis' *ngFor="let publi of publis">
+      <div>
+        <h5>{{publi.titulo_p}}</h5>
+        <h6>{{publi.edad_p}}</h6>
+        <p class="card-text">{{publi.texto_p}}</p>
+        <h6>{{publi.telefono_p}}</h6>
+      </div>
+  </div>
+</div>

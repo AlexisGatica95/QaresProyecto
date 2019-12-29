@@ -55,6 +55,7 @@ router.post('/:id', upload.array('file',2), async(req,res,next)=> {
                 img_p : stringIMG
             }
             let publican2 = await publicacionModel.publicacion(obj);
+            console.log(obj);
             if (publican2){ 
                 res.json({status:'ok', message : 'se subio tu publicacion'});
             }    
@@ -142,6 +143,24 @@ router.get('/provincias', async (req,res,next)=> {
     }
 })
 
+router.get('/allpublis', async(req,res,next)=> {
+    try {
+        let allpublis = await publicacionModel.getallpublis();
+
+        console.log('entro al controller');
+
+        res.json({status: 'ok', allpublis : allpublis});
+
+        
+
+    } catch (error) {
+        
+        console.log(error);
+        res.status(500).json({status:'error'});
+        throw error;
+    }
+})
+
 router.get('/:id' , async (req,res,next)=> {
     try {
         
@@ -160,6 +179,8 @@ router.get('/:id' , async (req,res,next)=> {
         res.status(500).json({status:'error'});    
     }
 })
+
+
 
 
 

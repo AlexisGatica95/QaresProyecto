@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PublicarComponent } from './components/publicar/publicar.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { HomeComponent } from './components/home/home.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { RegistroComponent } from './components/registro/registro.component';
     NavbarComponent,
     PublicarComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    HomeComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

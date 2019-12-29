@@ -1,18 +1,13 @@
 
 
 header {
-    background: #262627a6;
+   
     width: 100vw;
     padding-right: 5px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     margin-bottom: 5%;
-    
 }
 
 nav {
@@ -21,8 +16,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    flex-wrap: wrap;    padding-right: 15vw;
+    padding-right: 15vw;
     padding-left: 10vw;
+    background: #262627a6;
     
 }
 
@@ -40,6 +36,36 @@ header img {
 
 } 
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #262627a6;
+
+    right: 0;
+    bottom: 0;
+    min-width: 150px;
+    text-align: center;
+    z-index:1 ;
+    transform: translateY(113%);
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block
+}
+
+.dropdown{
+    position: relative;
+}
+
+
+.dropdown-content ul {
+    flex-direction: colum;
+    padding: .5rem;
+    right: 15vw;
+    
+    
+}
 
 a   {
     text-align: center;
@@ -50,13 +76,32 @@ a   {
     padding: 0 18px;
 }
 
-a:hover{
+li {
+    cursor: pointer;
+    color: floralwhite;
+}
+
+li:hover{
     text-decoration: none;
     color: #ffffff;
 } 
 
-li {
+ul {
+    display: flex;
     list-style:none;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+/* .dropdown{
+    position: relative;
+} */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .right {

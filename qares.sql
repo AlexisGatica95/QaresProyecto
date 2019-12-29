@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-12-2019 a las 07:44:45
+-- Tiempo de generación: 29-12-2019 a las 07:19:48
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -156,22 +156,22 @@ CREATE TABLE `publicaciones` (
   `texto_p` varchar(500) NOT NULL,
   `edad_p` int(2) NOT NULL,
   `telefono_p` int(20) NOT NULL,
+  `img_p` varchar(500) NOT NULL,
   `wsp_p` tinyint(4) DEFAULT '0',
   `mail_p` varchar(50) NOT NULL,
   `activa` tinyint(4) DEFAULT '0',
-  `categoria_p` int(1) NOT NULL,
-  `id_mail_p` varchar(100) DEFAULT NULL,
-  `img_p` varchar(200) NOT NULL
+  `categoria` int(1) NOT NULL,
+  `id_mail_p` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `publicaciones`
 --
 
-INSERT INTO `publicaciones` (`id_publi`, `id_usr`, `fecha_p`, `titulo_p`, `texto_p`, `edad_p`, `telefono_p`, `wsp_p`, `mail_p`, `activa`, `categoria_p`, `id_mail_p`, `img_p`) VALUES
-(8, 5, '2019-12-09 19:23:46', 'otro alexio de postrecito', 'el alexio clasico relleno con una suave pasta de mani', 24, 1169153556, NULL, 'alexisgatica75@gmail.com', 1, 1, '93c8f54f-2c74-4b36-9fce-0db8b138c493', ''),
-(9, 5, '2019-12-15 20:56:50', 'alexis', 'alexis reload con baño de chocolate', 22, 122334556, 0, 'alexisgatica95@gmail.com', 0, 0, 'fa7ff9e2-ae0f-42e4-b448-9bd2a53e9b6d', ',ef30841d-28b8-4e6f-9709-888d03892257.jpeg'),
-(10, 5, '2019-12-15 21:02:10', 'alexis gatica', 'de choco', 22, 1122334455, 0, 'alexisgatica95@gmail.com', 0, 0, '7edbdc89-ca31-4e09-b579-76835fd75cb9', ',2990821e-5e51-45bb-90ad-047cb0d2ca0d.jpeg');
+INSERT INTO `publicaciones` (`id_publi`, `id_usr`, `fecha_p`, `titulo_p`, `texto_p`, `edad_p`, `telefono_p`, `img_p`, `wsp_p`, `mail_p`, `activa`, `categoria`, `id_mail_p`) VALUES
+(8, 5, '2019-12-09 19:23:46', 'otro alexio de postrecito', 'el alexio clasico relleno con una suave pasta de mani', 24, 1169153556, '', NULL, 'alexisgatica75@gmail.com', 1, 1, '93c8f54f-2c74-4b36-9fce-0db8b138c493'),
+(9, 5, '2019-12-28 15:42:05', 'alexiio', 'sasads', 23, 2147483647, ',d89dc254-23b0-40b7-aca1-f41c1bde3a9a.png', 0, 'alexis@gmail.com', 1, 0, '7936db47-ab31-4289-aa15-9cb44eb8f0ee'),
+(10, 5, '2019-12-28 15:49:25', 'alexiio', 'sasads', 22, 2147483647, ',7b570310-e7c2-445a-a234-b7573a5443ee.png', 0, 'alexis@gmail.com', 1, 0, '619fd0c3-35c0-4a96-b518-3f9d432f69d2');
 
 -- --------------------------------------------------------
 
@@ -200,33 +200,7 @@ INSERT INTO `usuarios` (`id_usuario`, `id_cliente_usuario`, `nombre_usuario`, `a
 (1, 1, 'Franco', 'Di Leo', 'dileo.francoj@gmail.com', '1144739222', 'abahyuhamsoAfD923', 1, '81dc9bdb52d04dc20036dbd8313ed055', 0),
 (2, 0, 'alexis', 'gaytica', 'daniocerebral1@gmail.com', '', '1e25a9c0-b184-4c50-9d04-8cbaf294b438', 1, '67ebb3a44d07706c5e86d2912433be58', 0),
 (4, 0, 'ivan', 'putin', '666@gmail.com', '11223344', 'bc8596de-d7ee-4bbf-abdc-16d2f8a3545c', 0, 'c7560fee42b51b285014371541b3f39c', 0),
-(5, 0, 'alexis', 'gatitogay', 'alexisgatica75@gmail.com', '1169153556', '67ebb3a44d07706c5e86d2912433be58', 1, '67ebb3a44d07706c5e86d2912433be58', 0),
-(6, 0, 'alexis', 'gatica', 'alexisgatica95@gmail.com', '', '0211c5de-9f59-4506-a2a9-4bee138d0c0c', 0, '67ebb3a44d07706c5e86d2912433be58', 0),
-(7, 0, 'alexis', 'alexisgatica', 'alexisgatica75@gmail.com', '', '2a820c3d-ba1a-4fd3-be7b-29864d4c5780', 0, 'e2d00ceda0a7feb3b2ea531d04659564', 0),
-(8, 0, '', '', '', '', '03b89539-80de-4807-afac-f9014209a366', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(9, 0, '', '', '', '', 'ab53a08d-08f7-4fae-bbb7-2e167bbe940c', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(10, 0, '', '', '', '', '69842085-7514-4945-87cb-558c12c3952d', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(11, 0, '', '', '', '', '7da682a9-3a5f-40ed-8df0-49db250e97a2', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(12, 0, '', '', '', '', '4427408b-35f0-485b-b742-1e9356c72a64', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(13, 0, '', '', '', '', '5b502a49-3bf6-4271-9b44-80ed5bbc97a9', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(14, 0, '', '', '', '', '459aeef8-5c06-45c4-9cda-0e89f204853d', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(15, 0, '', '', '', '', '6ff9f073-6801-4945-bc30-bdc26075d333', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(16, 0, '', '', '', '', 'fca9f827-d8d8-459e-bc38-564f0947bd9e', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(17, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', '8c69e62c-7b64-41fb-b346-fa6f9112c2e6', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(18, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', '14d51f6f-2c18-4a28-9227-94d2b3dbf94b', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(19, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', '18eeff7c-e18c-444f-b7af-7dd26e38aa44', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(20, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', 'e3fc3de9-41f1-45dc-a9c1-359644010e54', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(21, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', '9e6db6d2-35d7-4ad8-aedf-2719c4b28d43', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(22, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', 'ca801ab3-5169-43a0-9e3d-8c4d70f1322e', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(23, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', 'bfb16c75-5080-4374-b419-04ddc050cbbd', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(24, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', 'e590780b-3a18-480d-92a6-005300f81b51', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(25, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', 'a034149a-6d3f-4c85-92a4-371dafd65cdc', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(26, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', '6ceecfe6-b442-4ddb-b4fc-a017b83be090', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(27, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', '3c3b3ec4-6e36-40e0-81bd-57ec171f09c7', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(28, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', '193f00c1-64b0-4173-af80-673e88b1c3a6', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(29, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', 'ba51ad70-df37-4c2d-ae76-695fde98ae79', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(30, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', '362e807b-7673-4c5d-a1b6-4f00f01c365d', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(31, 0, 'rerw', 'ferwer', 'alexis@gmail.com', '', '517535be-640d-4fa1-85c3-e9ac95ba5532', 0, 'd41d8cd98f00b204e9800998ecf8427e', 0);
+(5, 0, 'alexis', 'gatitogay', 'alexisgatica75@gmail.com', '1169153556', '3f2eea54-69d4-4763-ac44-9a00166cecb0', 1, '67ebb3a44d07706c5e86d2912433be58', 0);
 
 --
 -- Índices para tablas volcadas
@@ -321,7 +295,7 @@ ALTER TABLE `publicaciones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas

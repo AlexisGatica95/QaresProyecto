@@ -1,0 +1,22 @@
+:host{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+
+  .publis{
+    margin: 0 1%;
+    box-sizing: border-box;
+    flex-basis: 31.33%;
+    background-color: #f5f5dcfc;
+    padding: 1rem;
+  }
+
