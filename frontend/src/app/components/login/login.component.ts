@@ -22,18 +22,21 @@ export class LoginComponent implements OnInit {
 
  async login() {
     let usr_ok : any= await this.usuariosService.loginUsuario(this.form.value);
-    if(usr_ok.status != 'invalid') {
+    if(usr_ok.status = 'ok') {
       console.log(usr_ok.JWT);
       console.log(usr_ok);
       localStorage.setItem('usuario', usr_ok.JWT);
       localStorage.setItem('nombre', usr_ok.usuario.nombre);
       localStorage.setItem('id', usr_ok.usuario.id);
+      localStorage.setItem('prueva','prueba');
       this.router.navigate(['home']);
+ 
     } else {
       // usuario o contraseña incorrectos
       console.log('login incorrecto');
       
     }
+    
   }
 
 }

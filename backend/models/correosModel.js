@@ -6,7 +6,7 @@ const nodemailer = require('nodemailer');
 async function sendGenericEmail(obj) {
     try {
         let codigomail = obj.codigo_mail_usuario;
-        let linkconfirmacion = 'http://localhost:3000/registro/confirmar/'+codigomail;
+        let linkconfirmacion = 'http://localhost:3001/registro/confirmar/'+codigomail;
         let transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
             port: 587,
@@ -40,7 +40,7 @@ async function sendGenericEmail(obj) {
 async function MailConfirmarPubli(obj) {
     try {
         let codigomail = obj.id_mail_p;
-        let linkconfirmacion = 'http://localhost:3000/publicacion/confirmar/'+codigomail;
+        let linkconfirmacion = 'http://localhost:3001/publicacion/confirmar/'+codigomail;
         
         let transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',

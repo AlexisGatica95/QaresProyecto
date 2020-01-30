@@ -1,1 +1,40 @@
 <app-navbar></app-navbar>
+<div class="contenedor">
+   <div class="header">
+       <div class="welcome">
+           <h1>Hola {{nombre}}</h1>
+           <h2>en tu perfil vas a poder ver tus publicaciones activas y editarlas</h2>
+       </div>
+       <div class="content-bottom">
+           <ul class="menu-perfil">
+               <li class="btn-red" >anuncios publicados</li>
+               <li class="btn-red">creditos</li>
+           </ul>
+           <button class="btn-publicar" type="button" (click)='opendialog()'>Publicar</button>
+       </div>
+   </div>
+
+   <div class="contenedor">
+    <div class='publis' name="filterPublis" *ngFor="let publi of publis ">
+      <div class="contenido"> 
+        <div class="div-imagen">
+          <img class='imgpubli' *ngFor ='let imagen of publi.img_p' src = "http://localhost:3001/static/uploads/{{imagen}}">
+        </div>
+        <div class="div-content">
+          <h5 class="titulo">{{publi.titulo_p}}</h5>
+          <h6 class="edad">{{publi.edad_p}}</h6>
+          <p class="texto">{{publi.texto_p}}</p> 
+        </div>
+        <div class="div-telefono">
+          <h6 class="telefono">{{publi.telefono_p}}</h6> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+

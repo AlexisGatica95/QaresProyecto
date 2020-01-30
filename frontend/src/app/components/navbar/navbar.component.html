@@ -1,31 +1,17 @@
-<header>
-  <nav>
-    <div class="logo">
-      <img src="http://www.penumbria.mx/wp-content/uploads/2018/08/keythong-1.png"/>
-    </div>
-    <div class="right">
-      <ul *ngIf="login; else nologin ">
-      <li [routerLink]="['/perfil']">{{nombre}}</li>
-            
-
-        <li class='dropdown'>
-          <a href="">▾</a>
-          <div class="dropdown-content">
-            <ul class="menu">
-              <li [routerLink]="['/perfil']">Configuracion</li>
-              <li  (click)="logout()">Salir</li>  
-            </ul>
-          </div>
-        </li>
+<nav class="nav-content">
+  <div class="left">
+    <img class='img-logo' src="../../../assets/img/navQares.png" [routerLink]="['/home']" />
+  </div> 
+  <div class="rigth">
+    <ul class="ul-perfil" *ngIf="login; else nologin ">
+      <li class='nombre' [routerLink]="['/perfil']">{{nombre}}</li>
+      <li  class="mrg" (click)="logout()">Salir</li>  
+    </ul>
+    <ng-template #nologin>
+      <ul class="ul-perfil">
+      <li><a class="" [routerLink]="['/login']">Iniciar sesión</a></li>
+      <li><a class="" [routerLink]="['/registro']">Registrate</a></li>
       </ul>
-        <ng-template #nologin>
-          <ul>
-          <li><a class="nav-link" [routerLink]="['/login']">Iniciar sesión</a></li>
-          <li><a class="nav-link" [routerLink]="['/registro']">Registrate</a></li>
-          </ul>
-          
-        </ng-template>
-      
-    </div>
-  </nav>  
-</header>
+    </ng-template>
+  </div> 
+</nav>  

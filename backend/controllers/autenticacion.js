@@ -27,6 +27,7 @@ router.post('/login',async(req,res,next)=> {
                 var payload = {id : login_usr[0].id_usuario, role : 'admin'};
 
             }
+            
             const usuario = {id : login_usr[0].id_usuario , nombre : login_usr[0].nombre_usuario };
             const token = jwt.sign(payload,privateKey,signOptions);
             console.log(token);

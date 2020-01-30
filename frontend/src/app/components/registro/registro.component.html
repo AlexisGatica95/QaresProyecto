@@ -1,53 +1,35 @@
 <app-navbar></app-navbar>
 
-    <div class="cont-form">
-
-       <h1 class="p-b">Registrate</h1> 
-
+<div class="content">
+    <div class="registro">
+        <h1 class="p-b">Registrate</h1> 
         <div class="formulario">
-                    
-            <form [formGroup] = "form" (ngSubmit)="registrar()">
-                            
+            <form [formGroup] = "form" (ngSubmit)="registrar()">                       
                 <div class="form-group">
-
-                    <input type="text" class="form-control" name="nombre" formControlName="nombre" placeholder="Nombre">
+                    <input type="text" name="nombre" formControlName="nombre" placeholder="Nombre" autofocus autocomplete="off">
                     <span class="text-danger" *ngIf="form.get('nombre').status != 'VALID' && form.get('nombre').touched;">No cumple los requisitos</span>
-                
                 </div>
-
                 <div class="form-group">
-
-                    <input type="text" class="form-control" name="apellido" formControlName="apellido" placeholder="Apellido">
+                    <input type="text" name="apellido" formControlName="apellido" placeholder="Apellido" autocomplete="off">
                     <span class="text-danger" *ngIf="form.get('apellido').status != 'VALID' && form.get('apellido').touched;">No cumple los requisitos</span>
-                
                 </div>
-                            
                 <div class="form-group">
-
-                    <input type="email" class="form-control" name="mail" formControlName="mail" placeholder="Foo@example.com">
+                    <input type="email" name="mail" formControlName="mail" placeholder="Foo@example.com" autocomplete="off">
                     <span class="text-danger" *ngIf="form.get('mail').status != 'VALID' && form.get('mail').touched;">Mail invalido</span>
                 </div>
-
                 <div class="form-group">
-                    <input type="text" class="form-control" name="telefono" formControlName="telefono" placeholder="Telefono">
+                    <input type="text" name="telefono" formControlName="telefono" placeholder="Telefono" autocomplete="off">
                     <span class="text-danger" *ngIf="form.get('telefono').status != 'VALID' && form.get('telefono').touched;">No cumple los requisitos</span>
-                
                 </div>
                 <div class="form-group">
-
-                    <input type="password" class="form-control" name="password" formControlName="password" placeholder="Password">
-                    <span class="text-danger" *ngIf="form.get('password').status != 'VALID' && form.get('password').touched;">No cumple los requisitos</span>
-                
+                    <input type="password" name="password" formControlName="password" placeholder="Password" autocomplete="off">
+                    <span class="text-danger" *ngIf="form.get('password').status != 'VALID' && form.get('password').touched;">No cumple los requisitos</span>           
                 </div>
-                
                 <div class="g-recaptcha" data-sitekey="6LeIfcgUAAAAAHd7_p5XlhXhl9ce-sS0eh_ZD4zT"></div>
-
                 <button type="submit" [disabled]="form.invalid" class="btn btn-success btn-block">Registrarse</button>
-                            
-                        
             </form>
-
-         </div>
-
+        </div>
     </div>
         
+    </div>
+

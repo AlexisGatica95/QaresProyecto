@@ -1,0 +1,24 @@
+/* 
+
+esta es otra forma de dar estilos al mat-dialog
+
+import {ViewEncapsulation} from '@angular/core';
+
+@Component({
+    encapsulation: ViewEncapsulation.None 
+  }) 
+  
+  */
+
+.cdk-global-overlay-wrapper {
+    display: flex;
+}
+
+.mat-dialog-content{
+    display: contents;
+}
+
+.mat-dialog-container {
+    display: contents;
+ }
+ 

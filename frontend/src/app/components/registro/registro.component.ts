@@ -21,23 +21,24 @@ export class RegistroComponent implements OnInit {
       'apellido' : new FormControl('', [Validators.required]),
       'telefono' : new FormControl('', [Validators.required]),
       'mail' : new FormControl('', [Validators.required,Validators.email]),
-      'password' : new FormControl('', [Validators.required])
+      'password' : new FormControl('', [Validators.required,Validators.minLength(6)])
 
     })
   }
 
   async registrar() {
-    // console.log(this.form)
-    // console.log(this.form.value);
-    // // console.log(this.form.get('nombre'));
-    // console.log(this.form.get('nombre').status);
-    // console.log(this.form.get('nombre').touched);
-    // https://www.npmjs.com/package/sweetalert
-    // $ npm install --save sweetalert2
-
+    
     let post_ok : any = await this.usuariosService.postUsuario(this.form.value);
     if(post_ok.status == "ok") {
-     
+      await Swal.fire({
+        position: 'center',
+        icon: 'success',
+        html: '<b class="texto">chequea tu mail para habilitar la tu cuenta </b>',
+        width: 300,
+        timer: 3000
+      })
+      this.form.reset();
+      location.href="../home";
     } else {
 
     }

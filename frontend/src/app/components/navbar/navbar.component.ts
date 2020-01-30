@@ -20,8 +20,6 @@ nombre : string;
     } else {
       this.login = false;
     }
-
-    
   }
 
   logout(){

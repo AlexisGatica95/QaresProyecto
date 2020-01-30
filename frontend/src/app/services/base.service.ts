@@ -66,6 +66,8 @@ export class BaseService {
     }
   }
 
+  
+
   async post(obj) {
     try {
       // http://localhost:3000/usuarios/1

@@ -1,0 +1,99 @@
+.contenedor{
+    display:flex;
+    justify-content:center;
+}
+
+input{
+    height: 35px;
+}
+
+.texto{
+    font-size: 12px;
+}
+
+form {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background: rgb(253, 255, 234);
+    padding: 30px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+input.titulo{
+    width: 50%;
+}
+
+.contenidoform {
+    flex-direction: row;
+    display: flex;
+}
+
+.col-rigth>input{
+    margin-bottom: 20px;
+}
+
+
+ .btn{
+    font-size: 13px;
+    line-height: 1;
+    border-radius: 500px;
+    height: 35px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 100px;
+    text-transform: uppercase;
+    white-space: normal;
+    margin-top: 25px;   
+}
+
+
+.col-rigth{
+    margin-left: 5%;
+}
+
+textarea {
+    width: 100%;
+}
+
+.edad{
+    width:50px;
+}
+
+.telefono, .email{
+    width: 100%;
+}
+
+select.provi {
+    width: 100%;
+    height: 25px;
+}
+
+
+input[type="file" i] {
+    margin-bottom:15px ;
+}
+
+input select{
+    width:60vw;
+}
+
+label {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.formulario {
+    width: 60vw;
+}
+
+img {
+    height: 30px;
+    width: 30px;
+}

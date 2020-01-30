@@ -1,12 +1,27 @@
 <app-navbar></app-navbar>
+<app-divpublicar></app-divpublicar>
 
-<div class="contenedor" >
-  <div class='publis' *ngFor="let publi of publis">
-      <div>
-        <h5>{{publi.titulo_p}}</h5>
-        <h6>{{publi.edad_p}}</h6>
-        <p class="card-text">{{publi.texto_p}}</p>
-        <h6>{{publi.telefono_p}}</h6>
+<div class="buscador">
+  <div class="input">
+      <input type="text" class="search" placeholder="Search..." [(ngModel)]="filterPublis">
+  </div>
+</div>
+
+
+<div class="contenedor">
+  <div class='publis' name="filterPublis" *ngFor="let publi of publis | filter:filterPublis">
+    <div class="contenido"> 
+      <div class="div-imagen">
+        <img class="imgpubli" src="http://localhost:3001/static/uploads/{{publi.img_p[0]}}">  
+      </div><!-- <img  *ngFor ='let imagen of publi.img_p' src = "http://localhost:3001/static/uploads/{{imagen}}">  -->  
+      <div class="div-content">
+        <h5 class="titulo">{{publi.titulo_p}}</h5>
+        <h6 class="edad">{{publi.edad_p}}</h6>
+        <p class="texto">{{publi.resumen}}</p> 
       </div>
+      <div class="div-telefono">
+        <h6 class="telefono">{{publi.telefono_p}}</h6> 
+      </div>
+    </div>
   </div>
 </div>

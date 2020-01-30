@@ -12,6 +12,15 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { HomeComponent } from './components/home/home.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalComponent } from './components/modal/modal.component';
+import { DivpublicarComponent } from './components/divpublicar/divpublicar.component';
+import { FilterPipe } from './pipe/filter.pipe';
+import { BuscadorComponent } from './components/buscador/buscador.component';
+
 
 @NgModule({
   declarations: [
@@ -21,14 +30,26 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     LoginComponent,
     RegistroComponent,
     HomeComponent,
-    PerfilComponent
+    PerfilComponent,
+    ModalComponent,
+    DivpublicarComponent,
+    FilterPipe,
+    BuscadorComponent
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule //para hacer un formulario reactivo
+    ReactiveFormsModule,//para hacer un formulario reactivo
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule
+    
+  ],
+  //agrego esto para crear un modal
+  entryComponents:[ModalComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

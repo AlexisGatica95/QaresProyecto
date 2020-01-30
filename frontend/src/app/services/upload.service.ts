@@ -11,8 +11,7 @@ export class UploadService extends BaseService {
       // upload/id_cliente
       this.setEndPoint('publicacion/'+id);
       this.getHttpOptions(true);
-      // http://localhost:300/publicacion/:id
-      
+      // http://localhost:3001/publicacion/:id
       return this.post(obj);
 
 
@@ -26,7 +25,7 @@ export class UploadService extends BaseService {
       // upload/id_cliente
       this.setEndPoint('upload');
       this.getHttpOptions(true);
-      // http://localhost:300/upload/1
+      // http://localhost:3001/upload/1
       return this.post(obj);
     } catch (error) {
       throw error;

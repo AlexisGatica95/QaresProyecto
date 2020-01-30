@@ -1,32 +1,18 @@
 <app-navbar></app-navbar>
 
-<div class="overlay">
-    
-    <div class="popup"> 
-        
+
+
+<div class="content">
+    <div class="log-in">
+        <h1 class="p-b">Log in</h1>
         <div class="formulario">
-    
-            <div class="cont-form">
-                
-                <h1 class="p-b">Log in</h1>
-                    
-                <div class="formulario">
-                        <form [formGroup] = "form" (ngSubmit)="login()">
-                        
-                            <input type="text" class="form-control" name="mail" formControlName="mail" placeholder="mail" autocomplete="off" autofocus>
-                            <span class="text-danger" *ngIf="form.get('mail').status != 'VALID' && form.get('mail').touched;">Usuario invalido</span>
-
-                            <input type="password" class="form-control" name="password" formControlName="password" placeholder="foo@example.com" autocomplete="off" autofocus>
-                            <span class="text-danger" *ngIf="form.get('password').status != 'VALID' && form.get('password').touched;">Password invalido</span>
-                            
-                            <button type="submit" [disabled]="form.invalid" class="btn btn-block">Ingresar</button>
-                        
-                        </form>
-                </div>
-
-            </div>
-
-        </div>      
+        <form [formGroup] = "form" (ngSubmit)="login()">
+        <input type="text" class="form-control" name="mail" formControlName="mail" placeholder="Email" autofocus>
+        <span class="text-danger" *ngIf="form.get('mail').status != 'VALID' && form.get('mail').touched;">Usuario invalido</span>
+        <input type="password" class="form-control" name="password" formControlName="password" placeholder="Contaseña" >
+        <span class="text-danger" *ngIf="form.get('password').status != 'VALID' && form.get('password').touched;">Password invalido</span>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-block">Iniciar Sesion</button>
+        </form>
+        </div>   
     </div>
-   
 </div>

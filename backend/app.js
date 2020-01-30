@@ -17,9 +17,6 @@ const publicacionRouter = require('./controllers/publicacion');
 const homeRouter = require('./controllers/home');
 const uploadRouter = require('./controllers/upload');
 
-
-
-
 var app = express();
 app.use(cors());
 secured = (req,res,next) => {
@@ -47,7 +44,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use('/static', express.static(__dirname + '/public'));
 
 app.use('/autenticacion',autenticacionRouter);
 app.use('/registro',registroRouter);
@@ -55,8 +53,6 @@ app.use('/usuarios',secured, usuariosRouter);
 app.use('/publicacion',publicacionRouter);
 app.use('/home',homeRouter);
 app.use('/upload',uploadRouter);
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
